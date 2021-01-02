@@ -1,19 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
-const LikeButton = () => {
-  const [count, counter] = useState(0);
-
-  const countUp = () => {
-    counter(count++)
-  }
-
-  useEffect(() => {
-    document.getElementById("counter").addEventListener('click', countUp)
-  })
+const CountUpButton = () => {
+  const [count, setCount] = useState(0);
 
   return (
-    <button id={"counter"} className="btn">Like: {count}</button>
+    <button id={"counter"} className="btn" onClick={() => setCount(count + 3)}>Like: {count}</button>
   )
 }
 
-export default LikeButton
+export default CountUpButton
